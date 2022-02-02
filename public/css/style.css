@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    background:#92bde7;
+    color:#485e74;
+    line-height:1.6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding:1em;
+  }
+  .container{
+    max-width:1170px;
+    margin-left:auto;
+    margin-right:auto;
+    padding:1em;
+  }
+
+  .email{
+    background:#f9feff;
+  }
+
+  .email form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:20px;
+  }
+  .email form label{
+    display:block;
+  }
+  
+  .email form p{
+    margin:0;
+  }
+  
+  .email form .full{
+    grid-column: 1 / 3;
+  }
+  
+  .email form button, .email form input, .email form textarea{
+    width:100%;
+    padding:1em;
+    border:1px solid #c9e6ff;
+  }
+  
+  .email form button{
+    background:#c9e6ff;
+    border:0;
+    text-transform: uppercase;
+  }

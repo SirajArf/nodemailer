@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="401112408383-an4biqsuubc5lu2k72qajkt8so78878f.apps.googleusercontent.com">
+
+    <link rel="stylesheet" href="../public/css/style.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <title>Email Form</title>
+</head>
+<body>
+    <h1>hello this is email form</h1>
+    <div class="container">
+    <div class="email">
+        {{msg}}
+        <form method ="POST" action="send">
+            <p>
+                <label>Name:</label>
+                <input type="text" name="name" placeholder="enter your name">
+            </p>
+            <p>
+                <label>Contact Number:</label>
+                <input type="number" name="contact" placeholder="your mobile number">
+            </p>
+            <p>
+                <label>Email:</label>
+                <input type="email" name="email" placeholder="enter your mail">
+            </p>
+             <p class="full">
+                <label>Message:</label>
+                <textarea name="message" rows="5" placeholder="enter your message "></textarea>
+            </p>
+            <p class="full">
+                <button type="submit">Submit</button>
+            </p>
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
