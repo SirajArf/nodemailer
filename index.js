@@ -28,36 +28,25 @@ app.get('/', (req, res) => {
 
 app.post('/send', (req, res) => {
     console.log(req.body);
-//     const output = `
-     
-      
-//      <ul>  
-//         <li>Name: ${req.body.name}</li>
-//         <li>Company: ${req.body.contact}</li>
-//         <li>Email: ${req.body.email}</li> 
-//       </ul>
-//       <h3>Message</h3>
-//       <p>${req.body.message}</p>
-//    `;
-   //console.log(output)
+
    let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false, 
     auth: {
-        user: process.env.USERNAME1, // generated ethereal user
-        pass:  process.env.password // generated ethereal password
+        user: process.env.USERNAME1, 
+        pass:  process.env.password 
     },
     tls:{
       rejectUnauthorized:false
     }
   });
   let mailOptions = {
-    from: '"For Testing" <rahmansiraj170@gmail.com>', // sender address
-    to: 'siraj.arfeen@gmail.com', // list of receivers
-    subject: 'from nodemailer', // Subject line
-    text: req.body.message, // plain text body
-   // html: output // html body
+    from: '"For Testing" <rahmansiraj170@gmail.com>', 
+    to: req.data.email, 
+    subject: 'from nodemailer', 
+    text: req.body.message, 
+  
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
@@ -73,10 +62,9 @@ transporter.sendMail(mailOptions, (error, info) => {
 });
 
 
-//server running
+
 app.listen(port, () => {
-    //console.log(process.env.USERNAME1)
-    //console.log(process.env.PASSWORD)
+  
     console.log(`server is running at port no ${port}`)
 });
 
